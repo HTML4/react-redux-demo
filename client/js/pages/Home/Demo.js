@@ -1,7 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-
-export default class Demo extends React.Component {
+class Demo extends React.Component {
 	componentWillMount(){
 		console.log("props",this.props)
 	}
@@ -14,3 +14,12 @@ export default class Demo extends React.Component {
 	}
 }
 
+const mapStateToPorps = state => {
+  console.log("stat..e",state)
+    const {data} = state.demo
+    return state.demo;
+};
+const mapDispatchToProps = dispatch => ({
+});
+
+export default connect(mapStateToPorps, mapDispatchToProps)(Demo);

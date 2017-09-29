@@ -8,15 +8,11 @@ const logger = store => next => action => {
     // Declare API call action, pass it on:
     return next(action)
   }
-  if(process && process.env && process.env.NODE_ENV === "development") {
-    console.group("Action | " + action.type);
-    console.log('dispatching', action);
-  }
+  console.group("Action | " + action.type);
+  console.log('dispatching', action);
   let result = next(action);
-  if(process && process.env && process.env.NODE_ENV === "development") {
-    console.log('next state', store.getState());
-    console.groupEnd(action.type);
-  }
+  console.log('next state', store.getState());
+  console.groupEnd(action.type);
   return result;
 };
 export default logger

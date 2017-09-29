@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import Index from 'Client/js/pages/Home/Index'
 import Demo from 'Client/js/pages/Home/Demo'
+import '../../node_modules/antd/dist/antd.less';
 
 export default class CRouter extends Component {
 	loading(){
@@ -14,8 +15,7 @@ export default class CRouter extends Component {
         		
         	</Route>
         	<Route path="/demo" 
-        		components={(props) => !props ? <div>loading...</div> : <div>success</div>}
-        		 render={({props, _, element}) =>console.log("props..",props) }/>
+        		components={Demo}/>
         </Router>
 			)
 	}

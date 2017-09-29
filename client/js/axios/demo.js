@@ -12,3 +12,8 @@ export const postDemo = () => axios.post('http://api.xitu.io/resources/github', 
 }).catch(function (error) {
     console.log("error",error);
 });
+export const getDemo = () => axios.get('/341-1').then(function (response) {
+    return response.data;
+}).catch(function (error) {
+    console.log("error",error);
+});

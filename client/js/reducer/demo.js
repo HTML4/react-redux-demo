@@ -5,7 +5,6 @@ let initState = {
 	data: null
 }
 export default function getItems (state = initState, action) {
-	console.log("..",action.data)
 	switch (action.type) {
 		case type.GET_DEMO_DATA:
 			return {...state, isFetch:true}
