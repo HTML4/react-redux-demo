@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   output: {
-    path: path.join(__dirname, 'views'),
+    path: path.join(__dirname, 'client'),
     filename: '[name].js',
     library: '[name]', // 当前Dll的所有内容都会存放在这个参数指定变量名的一个全局变量下，注意与DllPlugin的name参数保持一致
   },
@@ -46,7 +46,7 @@ module.exports = {
       },
     }),
     /* 跟业务代码一样，该兼容的还是得兼容 */
-  
+
     new ExtractTextPlugin('[name].css'), // 打包css/less的时候会用到ExtractTextPlugin
   ],
   module: {
@@ -60,5 +60,5 @@ module.exports = {
       }
     ]
   }
-  
+
 };

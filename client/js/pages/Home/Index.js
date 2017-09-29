@@ -91,7 +91,7 @@ state = {
         );
         return (
         <div className="gutter-example">
-        		<img src="/images/home/welcome@2x.png"/>
+        		<img src="/images/welcome@2x.png"/>
             <Row gutter={16}>
                 <Col className="gutter-row" md={12}>
                     <div className="gutter-box">
