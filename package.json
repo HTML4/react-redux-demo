@@ -51,6 +51,8 @@
     "less-loader": "^4.0.5",
     "lodash": "^4.17.4",
     "path": "^0.12.7",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.6",
     "prop-types": "^15.5.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -67,5 +69,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "theme": {
+    "primary-color": "red"
   }
 }

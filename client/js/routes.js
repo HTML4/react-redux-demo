@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
+import { Router, Route, hashHistory, IndexRedirect, browserHistory } from 'react-router';
 import Index from 'Client/js/pages/Home/Index'
 import Demo from 'Client/js/pages/Home/Demo'
-import '../../node_modules/antd/dist/antd.less';
+
+
 
 export default class CRouter extends Component {
 	loading(){
@@ -10,11 +11,16 @@ export default class CRouter extends Component {
 	}
 	render(){
 		return(
-				<Router history={hashHistory}>
-        	<Route path={'/'} components={Index}>
+				<Router history={browserHistory}>
+        	<Route path={'/'} components={Index} getComponent={(nextState, cb) => {
+  // do asynchronous stuff to find the components
+  console.log("nextState",nextState)
+  				cb(null)
+				}}>
         		
         	</Route>
         	<Route path="/demo" 
+        	 onEnter={() =>{console.log("loglog")}}
         		components={Demo}/>
         </Router>
 			)

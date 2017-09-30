@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import {fetchItems} from 'Client/js/actions/demoAction'
 import {Link} from 'react-router'
+
 import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd';
 const FormItem = Form.Item;
 const residences = [{
@@ -28,6 +29,11 @@ const residences = [{
     }],
 }];
 class Index extends React.Component {
+    componentDidMount() {
+        this.props.form.setFieldsValue({
+            email: "mmm"
+        })
+    }
 state = {
         confirmDirty: false,
     };
@@ -91,12 +97,12 @@ state = {
         );
         return (
         <div className="gutter-example">
-        		<img src="/images/welcome@2x.png"/>
+            <Link to="/demo">跳转</Link>
             <Row gutter={16}>
                 <Col className="gutter-row" md={12}>
                     <div className="gutter-box">
                         <Card title="注册表单" bordered={false}>
-                            <Form onSubmit={this.handleSubmit}>
+                            <Form  onSubmit={this.handleSubmit}>
                                 <FormItem
                                     {...formItemLayout}
                                     label="邮箱"

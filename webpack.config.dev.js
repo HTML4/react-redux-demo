@@ -45,12 +45,12 @@ webpackConfigBase.devServer = {
       secure: false,
     }
   },
-  //historyApiFallback: true,
+  historyApiFallback: true,
   port: 3000,
-  //watchContentBase: true
-//  inline: true, // 可以监控js变化
-  hot: true, // 热启动
-  host: 'localhost',
+  watchContentBase: true
+  //inline: true, // 可以监控js变化
+  //hot: true, // 热启动
+  //host: 'localhost',
 }
 
 module.exports = webpackConfigBase
