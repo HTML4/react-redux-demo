@@ -5,11 +5,11 @@ import { Router, IndexRoute, Route, hashHistory} from 'react-router'
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
-import reducer from 'Client/js/reducer';
+import reducer from 'Src/js/reducer';
 import { createLogger } from 'redux-logger'
 //import logger from 'Client/js/middleware/logger'
-require('Client/styles/main.less')
-import CRouter from 'Client/js/routes.js'
+require('Src/styles/main.less')
+import CRouter from 'Src/js/routes.js'
 
 // redux 注入操作
 const middleware = [thunk];

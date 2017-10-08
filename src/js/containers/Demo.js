@@ -1,5 +1,5 @@
 import React from 'react'
-import {fetchItems} from 'Client/js/actions/demoAction'
+import {fetchItems} from 'Src/js/actions/demoAction'
 import { connect } from 'react-redux';
 import {Link} from 'react-router'
 

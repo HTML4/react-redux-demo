@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRedirect, browserHistory } from 'react-router';
-import Index from 'Client/js/containers/Index'
-import Demo from 'Client/js/containers/Demo'
+import Index from 'Src/js/containers/Index'
+import Demo from 'Src/js/containers/Demo'
 
 
 

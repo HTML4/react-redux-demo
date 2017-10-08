@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {fetchItems} from 'Client/js/actions/demoAction'
+import {fetchItems} from 'Src/js/actions/demoAction'
 import {Link} from 'react-router'
 
 import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd';

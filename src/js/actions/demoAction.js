@@ -1,5 +1,5 @@
 import * as type from './demoType';
-import {postDemo, getDemo} from 'Client/js/axios/demo'
+import {postDemo, getDemo} from 'Src/js/axios/demo'
 const getItems = category => ({
     type: type.GET_DEMO_DATA,
 });

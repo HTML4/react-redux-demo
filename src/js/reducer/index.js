@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import demo from 'Client/js/reducer/demo'
+import demo from 'Src/js/reducer/demo'
 export default combineReducers({
     demo
 });

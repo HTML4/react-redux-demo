@@ -22,7 +22,7 @@ module.exports = {
   //devtool: 'source-map',
   //context: path.join(__dirname, './client'),
   entry: {
-    app: './client/js/app.js'
+    app: './src/js/app.js'
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -52,7 +52,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Client: path.resolve(__dirname, 'client'),
+      Src: path.resolve(__dirname, 'src'),
     }
   },
   plugins: plugins,

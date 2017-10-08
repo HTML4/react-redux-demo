@@ -35,7 +35,7 @@ webpackConfigBase.plugins.push(
   })
 )
 webpackConfigBase.devServer = {
-  contentBase: path.join(__dirname, "client"),
+  contentBase: path.join(__dirname, "src"),
   publicPath: '/',
   stats: { colors: true },
   proxy: {

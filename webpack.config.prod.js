@@ -19,13 +19,13 @@ const plugins = [
   }),
   new CopyWebpackPlugin([
   {
-    from: path.resolve(__dirname, './client/images'),
+    from: path.resolve(__dirname, './src/images'),
     to: path.resolve(__dirname, './build/images'),
     force: true,
     toType: 'dir',
     ignore: ['.*']
   },{
-    from: path.resolve(__dirname, './client/dll.js'),
+    from: path.resolve(__dirname, './src/dll.js'),
     to: path.resolve(__dirname, './build/dll.js'),
   }
 ]),
@@ -60,13 +60,13 @@ const plugins = [
 
 webpackConfigBase.plugins.push(
   new CopyWebpackPlugin([{
-    from: path.resolve(__dirname, './client/images'),
+    from: path.resolve(__dirname, './src/images'),
     to: path.resolve(__dirname, './build/images'),
     force: true,
     toType: 'dir',
     ignore: ['.*']
   },{
-    from: path.resolve(__dirname, './client/dll.js'),
+    from: path.resolve(__dirname, './src/dll.js'),
     to: path.resolve(__dirname, './build/dll.js'),
   }]),
   new webpack.LoaderOptionsPlugin({

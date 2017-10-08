@@ -1,4 +1,4 @@
-import * as type from 'Client/js/actions/demoType';
+import * as type from 'Src/js/actions/demoType';
 
 let initState = {
 	isFetch: false,
