@@ -5,23 +5,22 @@ import {Link} from 'react-router'
 
 class Demo extends React.Component {
 	componentWillMount(){
-		console.log("props",this.props)
+
 	}
 
 	render(){
-
+		console.log("props",this.props)
 		return (
 			<div>
 				<div onClick={() =>this.props.getItems()}>kasjhakfgaj</div>
-				<Link to="/">跳转12</Link>
+				<Link to="/">跳转121</Link>
 			</div>
-			
+
 		)
 	}
 }
 
 const mapStateToPorps = state => {
-  console.log("state..",state)
     const {data} = state.demo
     return state.demo;
 };
