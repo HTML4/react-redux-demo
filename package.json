@@ -41,7 +41,6 @@
     "eslint-plugin-flowtype": "^2.36.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
     "express": "^4.15.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
@@ -62,15 +61,14 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.2",
+    "screenfull": "^3.3.1",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "theme": {
-    "primary-color": "red"
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-plugin-react": "^7.4.0"
   }
 }

@@ -29,6 +29,8 @@ const webpackConfigBase= require('./webpack.config.base.js')
   //   new webpack.NoEmitOnErrorsPlugin(),
 
   // )
+
+webpackConfigBase.devtool = 'cheap-module-source-map'
 webpackConfigBase.plugins.push(
   new webpack.DefinePlugin({
     'process.env': { NODE_ENV: JSON.stringify("development") }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {fetchItems} from 'Src/js/actions/demoAction'
+import {fetchItems, showLoad, hideLoad} from 'Src/js/actions/demoAction'
 import {Link} from 'react-router'
 
 import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd';
@@ -64,7 +64,18 @@ state = {
         }
         callback();
     };
+    componentWillUpdate(nextprops){
+      if (nextprops.location.pathname!==this.props.location.pathname) {
+        this.props.showLoad()
+      }
+    }
+    componentDidUpdate(nextprops){
+      if(this.props.isLoad === true) {
+        this.props.hideLoad()
+      }
+    }
     render() {
+      console.log("isLoad", this.props.isLoad)
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
             labelCol: {
@@ -97,6 +108,8 @@ state = {
         );
         return (
         <div className="gutter-example">
+            {this.props.children}
+            <hr/>
             <Link to="/demo">跳转</Link>
             <Row gutter={16}>
                 <Col className="gutter-row" md={12}>
@@ -251,7 +264,9 @@ const mapStateToPorps = state => {
     return state.demo;
 };
 const mapDispatchToProps = dispatch => ({
-    getItems: () => dispatch(fetchItems())
+    getItems: () => dispatch(fetchItems()),
+    showLoad:() => dispatch(showLoad()),
+    hideLoad:() => dispatch(hideLoad())
 });
 
 const Indexs = Form.create()(Index);

@@ -1,3 +1,6 @@
 export const GET_DEMO_DATA = 'GET_DEMO_DATA';
 export const GET_DEMO_DATA_SUCCESS = 'GET_DEMO_DATA_SUCCESS';
 export const GET_DEMO_DATA_FAIL = 'GET_DEMO_DATA_FAIL';
+
+export const IS_LOAD = 'IS_LOAD';
+export const IS_LOAD_SUCCESS = 'IS_LOAD_SUCCESS';

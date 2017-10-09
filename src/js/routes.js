@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRedirect, browserHistory } from 'react-router';
 import Index from 'Src/js/containers/Index'
 import Demo from 'Src/js/containers/Demo'
-
-
+import Root from 'Src/js/containers/Root'
 
 export default class CRouter extends Component {
 	loading(){
@@ -12,15 +11,10 @@ export default class CRouter extends Component {
 	render(){
 		return(
 				<Router history={browserHistory}>
-        	<Route path={'/'} components={Index} getComponent={(nextState, cb) => {
-  // do asynchronous stuff to find the components
-  console.log("nextState",nextState)
-  				cb(null)
-				}}>
-
+        	<Route path={'/'} components={Root}>
+        		<Route path="demo"
+        			components={Demo}/>
         	</Route>
-        	<Route path="/demo"
-        		components={Demo}/>
         </Router>
 			)
 	}

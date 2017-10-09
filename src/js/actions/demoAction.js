@@ -12,12 +12,31 @@ const getItemsFail = (data) => ({
     data,
 });
 
+
+const isLoad = () => ({
+  type: type.IS_LOAD
+})
+const isLoadSuccess = () => ({
+  type: type.IS_LOAD_SUCCESS
+})
+
 export const fetchItems = () => (dispatch, getState) => {
-    console.log("getState",getState())
+    //console.log("getState",getState())
     dispatch(getItems());
     // setTimeout(function(){
     // 	return dispatch(getItemsSuccess({data: 1}))
     // }, 1000)
     getDemo().then(res => dispatch(getItemsSuccess(res)))
     // http[funcName](params).then(res => dispatch(receiveData(res, stateName)));
+};
+
+export const showLoad = () => (dispatch, getState) => {
+    
+    setTimeout(function(){
+      dispatch(isLoad())
+    }, 1000)
+};
+export const hideLoad = () => (dispatch, getState) => {
+    
+  dispatch(isLoadSuccess())
 };

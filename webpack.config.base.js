@@ -8,7 +8,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, './views/index.ejs'),
     filename: "./index.html",
-    production: false,
+    //production: false,
     inject: true
   }),
   new webpack.DllReferencePlugin({
