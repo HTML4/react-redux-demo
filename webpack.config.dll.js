@@ -14,7 +14,7 @@ module.exports = {
       或是css/less/图片/字体文件等资源，但注意要在module参数配置好相应的loader
     */
     dll: [
-      'antd', 'antd/dist/antd.less'
+      'antd'
     ],
   },
   plugins: [
@@ -50,14 +50,18 @@ module.exports = {
     new ExtractTextPlugin('[name].css'), // 打包css/less的时候会用到ExtractTextPlugin
   ],
   module: {
+    
+
     loaders: [{
         exclude: /node_modules/,
         loader: 'babel-loader',
         test: /\.js$/,
-      }, {
-        test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader'],
       }
+      // , {
+      //   test: /\.less$/,
+      //   loaders: ['style-loader', 'css-loader', 'less-loader'],
+      // }
+      
     ]
   }
 

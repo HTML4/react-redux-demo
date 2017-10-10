@@ -10,7 +10,11 @@ import { createLogger } from 'redux-logger'
 //import logger from 'Client/js/middleware/logger'
 require('Src/styles/main.less')
 import CRouter from 'Src/js/routes.js'
+import moment from 'moment';
 
+// 推荐在入口文件全局设置 locale
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 // redux 注入操作
 const middleware = [thunk];
  if(process && process.env && process.env.NODE_ENV === "development") {

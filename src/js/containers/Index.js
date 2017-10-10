@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {fetchItems, showLoad, hideLoad} from 'Src/js/actions/demoAction'
 import {Link} from 'react-router'
 
-import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd';
+import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker  } from 'antd';
 const FormItem = Form.Item;
 const residences = [{
     value: 'zhejiang',
@@ -34,7 +34,7 @@ class Index extends React.Component {
             email: "mmm"
         })
     }
-state = {
+    state = {
         confirmDirty: false,
     };
     handleSubmit = (e) => {
@@ -111,11 +111,22 @@ state = {
             {this.props.children}
             <hr/>
             <Link to="/demo">跳转</Link>
+            
             <Row gutter={16}>
                 <Col className="gutter-row" md={12}>
                     <div className="gutter-box">
                         <Card title="注册表单" bordered={false}>
                             <Form  onSubmit={this.handleSubmit}>
+                                <FormItem
+                                    {...formItemLayout}
+                                    label="日期"
+                                    hasFeedback
+                                >
+                                    {getFieldDecorator('riqi')(
+                                        <DatePicker style={{width:"100%"}}  />
+                                    )}
+                                </FormItem>
+                               
                                 <FormItem
                                     {...formItemLayout}
                                     label="邮箱"

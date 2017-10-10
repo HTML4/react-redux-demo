@@ -43,7 +43,7 @@ export default class Root extends React.Component{
           <Content style={{ margin: '0 16px', overflow: 'initial' }}>
             {this.props.children}
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer style={{ textAlign: 'center'}}>
             React-Admin ©2017 Created by 865470087@qq.com
           </Footer>
         </Layout>

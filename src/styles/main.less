@@ -1,3 +1,9 @@
+@import "./reset.less";
+
+// @import '~antd/dist/antd.less';
+// @primary-color: #404040;
+
+
 
 #root{
   height: 100%;
@@ -21,6 +27,9 @@
     .ant-menu-submenu-vertical > .ant-menu-submenu-title:after{
       display: none;
     }
+  }
+  .ant-layout-footer{
+    flex:0 0 0 !important;
   }
   p {
     margin: 10px 0 10px 0;
@@ -54,7 +63,7 @@
   transition: color .3s;
 }
 .ant-layout-sider-collapsed {
-  overflow-y: initial !important;
+  overflow-y: inherit !important;
 }
 .avatar {
   position: relative;
@@ -113,8 +122,5 @@
   }
 }
 
-@import "./reset.less";
 
-@import '~antd/dist/antd.less';
-@primary-color: #404040;
 

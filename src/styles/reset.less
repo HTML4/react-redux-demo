@@ -3,7 +3,7 @@
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 }
 /* 去除iPhone中默认的input样式 */
 input[type="submit"],input[type="reset"],input[type="button"],input{-webkit-appearance:none; resize: none;}
@@ -36,7 +36,23 @@ button{outline: none;font-family:"PingFang SC", "Microsoft YaHei";}
 
 
 html{font-size:-webkit-calc(100vw/7.5);font-size:calc(100vw/7.5);}
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
+::-moz-scrollbar{
+  width: 8px;
+  height: 8px;
+}
 
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0,0,0,.2);
+}
+::-moz-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0,0,0,.2);
+}
 /* function */
 .f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
 .f-cb,.f-cbli li{zoom:1;}

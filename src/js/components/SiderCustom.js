@@ -18,7 +18,7 @@ export default class SiderCustom extends Component{
     this.setMenuOpen(this.props);
   }
   componentWillReceiveProps(nextProps) {
-    this.onCollapse(nextProps.collapsed);
+    //this.onCollapse(nextProps.collapsed);
     this.setMenuOpen(nextProps)
   }
   setMenuOpen = props => {
@@ -29,6 +29,7 @@ export default class SiderCustom extends Component{
     });
   };
   onCollapse = (collapsed) => {
+
     this.setState({
       collapsed,
       mode: collapsed ? 'vertical' : 'inline',
@@ -42,7 +43,6 @@ export default class SiderCustom extends Component{
     popoverHide && popoverHide();
   };
   openMenu = v => {
-    console.log("vv",v);
     this.setState({
       openKey: v[v.length - 1]
     })
