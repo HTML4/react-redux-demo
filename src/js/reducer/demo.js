@@ -5,7 +5,7 @@ let initState = {
 	isLoad: true,
 	data: null
 }
-export default function getItems (state = initState, action) {
+const getItems = (state = initState, action) => {
 	switch (action.type) {
 		case type.GET_DEMO_DATA:
 			return {...state, isFetch:true}
@@ -19,3 +19,6 @@ export default function getItems (state = initState, action) {
       return state
 	}
 }
+
+
+module.exports = {getItems}

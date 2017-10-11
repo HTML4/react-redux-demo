@@ -21,8 +21,8 @@ class Demo extends React.Component {
 }
 
 const mapStateToPorps = state => {
-    const {data} = state.demo
-    return state.demo;
+    const {data} = state.getItems
+    return state.getItems;
 };
 const mapDispatchToProps = dispatch => ({
     getItems: () => dispatch(fetchItems())

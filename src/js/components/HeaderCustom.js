@@ -67,7 +67,7 @@ export default class HeaderCustom extends Component {
                 <Icon type="notification" />
             </Badge>
         </Menu.Item>
-        <SubMenu title={<span className="avatar"><img src="/images/welcome@2x.png" alt="头像" /><i className="on bottom b-white" /></span>}>
+        <SubMenu title={<span className="avatar" style={{verticalAlign: "middle"}}><img src="/images/welcome@2x.png" alt="头像" /><i className="on bottom b-white" /></span>}>
             <MenuItemGroup title="用户中心">
                 <Menu.Item key="setting:1">你好 - {this.props.user && this.props.user.userName}</Menu.Item>
                 <Menu.Item key="setting:2">个人信息</Menu.Item>

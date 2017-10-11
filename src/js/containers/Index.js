@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {fetchItems, showLoad, hideLoad} from 'Src/js/actions/demoAction'
 import {Link} from 'react-router'
 
-import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker  } from 'antd';
+import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker, Breadcrumb  } from 'antd';
 const FormItem = Form.Item;
 const residences = [{
     value: 'zhejiang',
@@ -108,6 +108,12 @@ class Index extends React.Component {
         );
         return (
         <div className="gutter-example">
+        <Breadcrumb>
+    <Breadcrumb.Item>Home</Breadcrumb.Item>
+    <Breadcrumb.Item><a href="">Application Center</a></Breadcrumb.Item>
+    <Breadcrumb.Item><a href="">Application List</a></Breadcrumb.Item>
+    <Breadcrumb.Item>An Application</Breadcrumb.Item>
+  </Breadcrumb>
             {this.props.children}
             <hr/>
             <Link to="/demo">跳转</Link>
@@ -271,8 +277,8 @@ class Index extends React.Component {
 
 const mapStateToPorps = state => {
   console.log("state..",state)
-    const {data} = state.demo
-    return state.demo;
+    const {data} = state.getItems
+    return state.getItems;
 };
 const mapDispatchToProps = dispatch => ({
     getItems: () => dispatch(fetchItems()),

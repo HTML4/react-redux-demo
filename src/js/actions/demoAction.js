@@ -26,7 +26,11 @@ export const fetchItems = () => (dispatch, getState) => {
     // setTimeout(function(){
     // 	return dispatch(getItemsSuccess({data: 1}))
     // }, 1000)
-    getDemo().then(res => dispatch(getItemsSuccess(res)))
+    getDemo().then(res => {
+      dispatch(getItemsSuccess(res))
+    }).catch(err => {
+      console.log("err", err)
+    })
     // http[funcName](params).then(res => dispatch(receiveData(res, stateName)));
 };
 

@@ -21,7 +21,7 @@ const middleware = [thunk];
  	middleware.push(createLogger())
  }
 const store = createStore(reducer, applyMiddleware(...middleware));
-console.log(store.getState());
+console.log("store",store.getState());
 
 
 ReactDom.render((
