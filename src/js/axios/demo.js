@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { get, post } from './tools';
+import { Get, Post } from './tools';
 
 export const postDemo = () => axios.post('http://api.xitu.io/resources/github', {
     category: "trending",
@@ -12,14 +12,7 @@ export const postDemo = () => axios.post('http://api.xitu.io/resources/github', 
 }).catch(function (error) {
     console.log("error",error);
 });
-const getDemo = () : Promise<Action> => {
-	return axios.get('/341-1').then(function (response) {
-    return Promise.resolve(response.data);
-	}).catch(function (error) {
-	    console.log("error",error);
-	    return Promise.reject("服务器异常，请稍后再试");
-	});
-}
+const getDemo = () => Get({url:'/341-1'})
 
 module.exports = {
   getDemo,

@@ -16,7 +16,7 @@ export default class CRouter extends Component {
           }>
           	<IndexRoute
         			components={Index}/>
-        		<Route path="demo"
+        		<Route path="/app/demo"
         			components={Demo}/>
         	</Route>
         </Router>

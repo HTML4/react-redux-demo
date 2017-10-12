@@ -12,8 +12,9 @@ class Demo extends React.Component {
 		console.log("props",this.props)
 		return (
 			<div>
-				<div onClick={() =>this.props.getItems()}>kasjhakfgaj</div>
-				<Link to="/">跳转121</Link>
+        {this.props.data ? this.props.data.showapi_res_error : null}
+				<div onClick={() =>this.props.getItems()}>发起请求</div>
+				<Link to="/">跳转到首页</Link>
 			</div>
 
 		)
@@ -22,6 +23,7 @@ class Demo extends React.Component {
 
 const mapStateToPorps = state => {
     const {data} = state.getItems
+    console.log("data",data)
     return state.getItems;
 };
 const mapDispatchToProps = dispatch => ({

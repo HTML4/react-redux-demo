@@ -53,6 +53,12 @@ html{font-size:-webkit-calc(100vw/7.5);font-size:calc(100vw/7.5);}
   border-radius: 0;
   background-color: rgba(0,0,0,.2);
 }
+#root{
+  height: 100%;
+  min-width: 1200px;
+  overflow: auto;
+  overflow-x: hidden;
+}
 /* function */
 .f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
 .f-cb,.f-cbli li{zoom:1;}
@@ -162,4 +168,10 @@ html{font-size:-webkit-calc(100vw/7.5);font-size:calc(100vw/7.5);}
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+
+#root{
+  height: 100%;
+  min-width: 1200px;
+  overflow: hidden;
 }

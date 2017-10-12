@@ -4,8 +4,8 @@ import { Layout } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SiderCustom from 'Src/js/components/SiderCustom'
-import HeaderCustom from 'Src/js/components/HeaderCustom'
+import SiderCustom from 'Src/js/components/common/SiderCustom'
+import HeaderCustom from 'Src/js/components/common/HeaderCustom'
 const { Content, Footer } = Layout;
 
 export default class Root extends React.Component{
@@ -17,11 +17,11 @@ export default class Root extends React.Component{
 		}
 	}
 	componentWillMount() {
-    this.getClientWidth();
-    window.onresize = () => {
-      console.log('屏幕变化了');
-      this.getClientWidth();
-    }
+    // this.getClientWidth();
+    // window.onresize = () => {
+    //   console.log('屏幕变化了');
+    //   this.getClientWidth();
+    // }
   }
 	getClientWidth() {    // 获取当前浏览器宽度并设置responsive管理响应式
     const clientWidth = document.body.clientWidth;

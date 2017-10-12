@@ -1,4 +1,5 @@
 import * as type from './demoType';
+import { Get, post } from 'Src/js/axios/tools';
 import {postDemo, getDemo} from 'Src/js/axios/demo'
 const getItems = category => ({
     type: type.GET_DEMO_DATA,
@@ -26,10 +27,11 @@ export const fetchItems = () => (dispatch, getState) => {
     // setTimeout(function(){
     // 	return dispatch(getItemsSuccess({data: 1}))
     // }, 1000)
-    getDemo().then(res => {
+    Get({url:'/341-1'}).then(res => {
       dispatch(getItemsSuccess(res))
     }).catch(err => {
       console.log("err", err)
+      dispatch(getItemsFail(err))
     })
     // http[funcName](params).then(res => dispatch(receiveData(res, stateName)));
 };

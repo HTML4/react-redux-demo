@@ -2,9 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux';
 import {fetchItems, showLoad, hideLoad} from 'Src/js/actions/demoAction'
 import {Link} from 'react-router'
+import BreadcrumbCustom from 'Src/js/components/common/BreadcrumbCustom'
 
-import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker, Breadcrumb  } from 'antd';
+import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker, Breadcrumb, Tabs  } from 'antd';
 const FormItem = Form.Item;
+const TabPane = Tabs.TabPane;
 const residences = [{
     value: 'zhejiang',
     label: 'Zhejiang',
@@ -108,15 +110,88 @@ class Index extends React.Component {
         );
         return (
         <div className="gutter-example">
-        <Breadcrumb>
-    <Breadcrumb.Item>Home</Breadcrumb.Item>
-    <Breadcrumb.Item><a href="">Application Center</a></Breadcrumb.Item>
-    <Breadcrumb.Item><a href="">Application List</a></Breadcrumb.Item>
-    <Breadcrumb.Item>An Application</Breadcrumb.Item>
-  </Breadcrumb>
+        <BreadcrumbCustom items={[{
+          render: "首页"
+        }]}/>
+        <Row gutter={14}>
+          <Col className="gutter-row" xs={17}>
+            <Card>
+              <Row>
+                <Col xs={8}>
+                  <img className="f-fl" style={{width:60, height:60, borderRadius:"50%"}} src="/images/b1.553c69e9.jpg" alt=""/>
+                  <div className="f-oh" style={{padding:"0 10px"}}>
+                    <p>用户名</p>
+                    <h3>用户X</h3>
+                  </div>
+                </Col>
+                <Col xs={8}>
+                  <p>公司名</p>
+                  <h3>XX公司</h3>
+                </Col>
+                <Col xs={8}>
+                  <p>登入名</p>
+                  <h3>123456</h3>
+                </Col>
+              </Row>
+            </Card>
+            <Row gutter={14} style={{marginTop: 10}}>
+              <Col xs={8}>
+                <Card title="融资额度" extra={<span style={{padding:"4px", backgroundColor:"#0eadb3", color:"#fff", borderRadius:"4px"}}>合计</span>} bordered={false}>
+                  <div className="f-tac" style={{height: 100, lineHeight: "100px", fontWeight:"bold", fontSize:20}}>0.00</div>
+                </Card>
+              </Col>
+              <Col xs={8}>
+                <Card title="销售总额" extra={<span style={{padding:"4px", backgroundColor:"#0eadb3", color:"#fff", borderRadius:"4px"}}>当前</span>} bordered={false}>
+                  <div className="f-tac" style={{height: 100, lineHeight: "100px", fontWeight:"bold", fontSize:20}}>0.00</div>
+                </Card>
+              </Col>
+              <Col xs={8}>
+                <Card title="采购总额" extra={<span style={{padding:"4px", backgroundColor:"#0eadb3", color:"#fff", borderRadius:"4px"}}>当前</span>} bordered={false}>
+                  <div className="f-tac" style={{height: 100, lineHeight: "100px", fontWeight:"bold", fontSize:20}}>0.00</div>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
+          <Col className="gutter-row" xs={7} style={{height: "315px"}}>
+            <Card  title="运营公告" extra={<a href="#">More</a>} bordered={false} style={{height:"100%"}} bodyStyle={{padding:"10px 24px", height:"100%"}}>
+              <ul>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+              </ul>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row gutter={14} style={{marginTop:20}}>
+          <Col xs={17}>
+            <Card bodyStyle={{padding:0}}>
+              <Tabs tabBarStyle={{height:48}}>
+                <TabPane tab="待我销售" key="1" style={{height: 100}}>
+                1
+                </TabPane>
+                <TabPane tab="待我采购" key="2" style={{height: 100}}>
+                2
+                </TabPane>
+              </Tabs>
+            </Card>
+          </Col>
+          <Col xs={7}>
+            <Card  title="运营公告" extra={<a href="#">More</a>} bordered={false} style={{height:"100%"}} bodyStyle={{padding:"10px 24px", height:"100%"}}>
+              <ul>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+                <li style={{padding: "5px 0", fontSize: 14}} className="f-toe">普华永道报告：中国登顶2030年最强经济体排</li>
+              </ul>
+            </Card>
+          </Col>
+        </Row>
+
+
             {this.props.children}
-            <hr/>
-            <Link to="/demo">跳转</Link>
+            <Link to="/app/demo">跳转</Link>
             
             <Row gutter={16}>
                 <Col className="gutter-row" md={12}>

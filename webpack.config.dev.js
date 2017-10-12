@@ -43,7 +43,7 @@ webpackConfigBase.devServer = {
   proxy: {
 
     '/341-1': {
-      target: 'http://route.showapi.com',
+      target: Config.ENDPOINT,
       secure: false,
     }
   },

@@ -65,15 +65,15 @@ export default class SiderCustom extends Component{
           openKeys={[this.state.openKey]}
           onOpenChange={this.openMenu}
       	>
-            <Menu.Item key="/app/dashboard/index">
-                <Link to={'/app/dashboard/index'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
+            <Menu.Item key="/">
+                <Link to={'/'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
             </Menu.Item>
             <SubMenu
-                key="/app/ui"
+                key="/app"
                 title={<span><Icon type="scan" /><span className="nav-text">UI</span></span>}
             >
 
-              <Menu.Item key="/app/ui/buttons"><Link to={'/app/ui/buttons'}>按钮</Link></Menu.Item>
+              <Menu.Item key="/app/demo"><Link to={'/app/demo'}>按钮</Link></Menu.Item>
               <Menu.Item key="/app/ui/icons"><Link to={'/app/ui/icons'}>图标</Link></Menu.Item>
               <Menu.Item key="/app/ui/spins"><Link to={'/app/ui/spins'}>加载中</Link></Menu.Item>
               <Menu.Item key="/app/ui/modals"><Link to={'/app/ui/modals'}>对话框</Link></Menu.Item>
