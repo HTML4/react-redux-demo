@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRedirect, browserHistory, IndexRoute } from 'react-router';
-import Index from 'Src/js/containers/Index'
-import Demo from 'Src/js/containers/Demo'
-import Root from 'Src/js/containers/Root'
+import Index from 'src/js/containers/Index'
+import Demo from 'src/js/containers/Demo'
+import Root from 'src/js/containers/Root'
 
 export default class CRouter extends Component {
 	loading(){

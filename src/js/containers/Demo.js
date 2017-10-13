@@ -1,7 +1,8 @@
 import React from 'react'
-import {fetchItems} from 'Src/js/actions/demoAction'
+import {fetchItems} from 'src/js/actions/demoAction'
 import { connect } from 'react-redux';
 import {Link} from 'react-router'
+import DataTable from 'src/js/components/common/DataTable'
 
 class Demo extends React.Component {
 	componentWillMount(){
@@ -12,6 +13,7 @@ class Demo extends React.Component {
 		console.log("props",this.props)
 		return (
 			<div>
+        <DataTable/>
         {this.props.data ? this.props.data.showapi_res_error : null}
 				<div onClick={() =>this.props.getItems()}>发起请求</div>
 				<Link to="/">跳转到首页</Link>

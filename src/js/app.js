@@ -5,12 +5,12 @@ import { Router, IndexRoute, Route, hashHistory} from 'react-router'
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
-import reducer from 'Src/js/reducer';
+import reducer from 'src/js/reducer';
 import { createLogger } from 'redux-logger'
 //import logger from 'Client/js/middleware/logger'
-require('Src/styles/main.less')
-import CRouter from 'Src/js/routes.js'
-import moment from 'moment';
+require('src/styles/main.less')
+import CRouter from 'src/js/routes'
+import moment from 'moment'
 
 // 推荐在入口文件全局设置 locale
 import 'moment/locale/zh-cn';

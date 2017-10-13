@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {fetchItems, showLoad, hideLoad} from 'Src/js/actions/demoAction'
+import {fetchItems, showLoad, hideLoad} from 'src/js/actions/demoAction'
 import {Link} from 'react-router'
-import BreadcrumbCustom from 'Src/js/components/common/BreadcrumbCustom'
-
-import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, DatePicker, Breadcrumb, Tabs  } from 'antd';
+import BreadcrumbCustom from 'src/js/components/common/BreadcrumbCustom'
+import _ from 'lodash'
+import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, Tabs, DatePicker  } from 'antd';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 const residences = [{
@@ -77,7 +77,7 @@ class Index extends React.Component {
       }
     }
     render() {
-      console.log("isLoad", this.props.isLoad)
+      console.log("isLoad", _.get(this.props, "isLoad1", "lll"))
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
             labelCol: {
@@ -111,8 +111,11 @@ class Index extends React.Component {
         return (
         <div className="gutter-example">
         <BreadcrumbCustom items={[{
-          render: "首页"
+          name: "首页",
+          icon: "user",
+          link:"/app/demo"
         }]}/>
+
         <Row gutter={14}>
           <Col className="gutter-row" xs={17}>
             <Card>

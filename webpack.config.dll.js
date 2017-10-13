@@ -3,6 +3,7 @@ var path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'src'),
     filename: '[name].js',
@@ -14,7 +15,7 @@ module.exports = {
       或是css/less/图片/字体文件等资源，但注意要在module参数配置好相应的loader
     */
     dll: [
-      'antd'
+      'lodash', 'js-cookie', 'axios', 'moment', 'nprogress'
     ],
   },
   plugins: [

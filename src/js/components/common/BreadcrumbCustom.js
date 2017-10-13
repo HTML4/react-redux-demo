@@ -1,5 +1,6 @@
 import React from 'react';
-import { Breadcrumb } from 'antd';
+import {Link} from 'react-router'
+import { Breadcrumb, Icon } from 'antd';
 class BreadcrumbCustom extends React.Component {
 
   render(){
@@ -7,12 +8,25 @@ class BreadcrumbCustom extends React.Component {
     if(!items || !items.length < 0) {
       return null
     }
+
     return(
       <Breadcrumb style={{padding:"12px 0"}}>
         {
-          items.map(item => {
+          items.map((item, i) => {
+
+            const content = (
+              <span>{item.icon
+                ? <Icon type={item.icon} style={{ marginRight: 4 }} />
+                : ''}{item.name}</span>
+            )
             return (
-              item.link ? <Breadcrumb.Item href={item.link}>{item.render}</Breadcrumb.Item> : <Breadcrumb.Item>{item.render}</Breadcrumb.Item>
+              <Breadcrumb.Item key={i}>
+                {
+                  item.link ? (
+                    <Link to={item.link}>{content}</Link>
+                  ) : content
+                }
+              </Breadcrumb.Item>
             )
           })
         }

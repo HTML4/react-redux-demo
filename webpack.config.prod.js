@@ -8,56 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const Config = require('./config')
 const webpackConfigBase= require('./webpack.config.base.js')
 
-const plugins = [
-
-
-  new HtmlWebpackPlugin({
-    template: path.join(__dirname, './views/index.ejs'),
-    filename: "./index.html",
-    production: true,
-    inject: true
-  }),
-  new CopyWebpackPlugin([
-  {
-    from: path.resolve(__dirname, './src/images'),
-    to: path.resolve(__dirname, './build/images'),
-    force: true,
-    toType: 'dir',
-    ignore: ['.*']
-  },{
-    from: path.resolve(__dirname, './src/dll.js'),
-    to: path.resolve(__dirname, './build/dll.js'),
-  }
-]),
-  new webpack.DllReferencePlugin({
-    context: path.join(__dirname), // 指定一个路径作为上下文环境，需要与DllPlugin的context参数保持一致，建议统一设置为项目根目录
-    manifest: require('./manifest.json'), // 指定manifest.json
-    name: 'dll',  // 当前Dll的所有内容都会存放在这个参数指定变量名的一个全局变量下，注意与DllPlugin的name参数保持一致
-  }),
-  new webpack.LoaderOptionsPlugin({
-    minimize: true,
-    debug: false
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false,
-      drop_console: true,
-      screw_ie8: true,
-      conditionals: true,
-      unused: true,
-      comparisons: true,
-      sequences: true,
-      dead_code: true,
-      evaluate: true,
-      if_return: true,
-      join_vars: true,
-    },
-    output: {
-      comments: false
-    },
-  })
-]
-
 webpackConfigBase.plugins.push(
   new CopyWebpackPlugin([{
     from: path.resolve(__dirname, './src/images'),
@@ -69,6 +19,7 @@ webpackConfigBase.plugins.push(
     from: path.resolve(__dirname, './src/dll.js'),
     to: path.resolve(__dirname, './build/dll.js'),
   }]),
+
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false

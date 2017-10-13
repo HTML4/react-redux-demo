@@ -3,9 +3,9 @@ import { Layout } from 'antd';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import SiderCustom from 'Src/js/components/common/SiderCustom'
-import HeaderCustom from 'Src/js/components/common/HeaderCustom'
+import Loading from 'src/js/components/common/Loading'
+import SiderCustom from 'src/js/components/common/SiderCustom'
+import HeaderCustom from 'src/js/components/common/HeaderCustom'
 const { Content, Footer } = Layout;
 
 export default class Root extends React.Component{
@@ -13,7 +13,8 @@ export default class Root extends React.Component{
 		super(props)
 		this.state = {
 			collapsed: false,
-			isMobile: false
+			isMobile: false,
+      isLoading:true
 		}
 	}
 	componentWillMount() {
@@ -22,6 +23,12 @@ export default class Root extends React.Component{
     //   console.log('屏幕变化了');
     //   this.getClientWidth();
     // }
+  }
+  componentDidMount(){
+    this.setState({
+      isLoading:false
+    })
+    document.getElementById('loadingRoot').setAttribute('class', 'loadingRoot fullScreen hidden')
   }
 	getClientWidth() {    // 获取当前浏览器宽度并设置responsive管理响应式
     const clientWidth = document.body.clientWidth;
@@ -35,6 +42,7 @@ export default class Root extends React.Component{
 	render(){
 		return (
 			<Layout className="ant-layout-has-sider">
+        
           {!this.state.isMobile && <SiderCustom path={this.props.location.pathname} collapsed={this.state.collapsed} />}
         <Layout>
           {

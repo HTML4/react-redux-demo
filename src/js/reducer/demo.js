@@ -1,4 +1,4 @@
-import * as type from 'Src/js/actions/demoType';
+import * as type from 'src/js/actions/demoType';
 
 let initState = {
 	isFetch: false,
@@ -9,9 +9,14 @@ const getItems = (state = initState, action) => {
 	switch (action.type) {
 		case type.GET_DEMO_DATA:
 			return {...state, isFetch:true}
-		case type.GET_DEMO_DATA_SUCCESS, 
-				 type.GET_DEMO_DATA_FAIL:
-			return {...state, isFetch: false, data: action.data}
+		case type.GET_DEMO_DATA_SUCCESS:
+		case type.GET_DEMO_DATA_FAIL:
+
+			return {
+				...state, 
+				isFetch: false, 
+				data: action.data
+			}
 
 		case type.IS_LOAD:
 			return {...state, isLoad: true}
