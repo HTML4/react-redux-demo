@@ -1,0 +1,61 @@
+.root{
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	
+	.sider{
+		width: 200px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #404040;
+		-webkit-transition: width 0.3s ease-out;
+	    -o-transition: width 0.3s ease-out;
+	    transition: width 0.3s ease-out;
+	    -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+	    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+		.logo{
+			text-align: center;
+		    height: 40px;
+		    line-height: 40px;
+		    cursor: pointer;
+		    margin: 15px 0;
+		    -webkit-transition: width 0.3s ease-out;
+		    -o-transition: width 0.3s ease-out;
+		    transition: width 0.3s ease-out;
+		    overflow: hidden;
+		    img{
+		    	width: 40px;
+		    	margin-right: 8px;
+			    -webkit-transition: width 0.3s ease-out;
+			    -o-transition: width 0.3s ease-out;
+			    transition: width 0.3s ease-out;
+		    }
+		    span{
+		    	vertical-align: text-bottom;
+			    font-size: 16px;
+			    color: #fff;
+			    text-transform: uppercase;
+			    display: inline-block;
+		    }
+		}
+	}
+
+	.main{
+		margin-left: 200px;
+		overflow: auto;
+	    height: 100%;
+	    -webkit-transition: all 0.3s ease-out;
+	    -o-transition: all 0.3s ease-out;
+	    transition: all 0.3s ease-out;
+	}
+	&.fold{
+		.sider{
+			width: 64px;
+		}
+		.main{
+			margin-left: 64px;
+		}
+	}
+}

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {fetchItems, showLoad, hideLoad} from 'src/js/actions/demoAction'
 import {Link} from 'react-router'
 import BreadcrumbCustom from 'src/js/components/common/BreadcrumbCustom'
+import Page from 'src/js/components/common/Page'
 import _ from 'lodash'
 import { Card, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, Tabs, DatePicker  } from 'antd';
 const FormItem = Form.Item;
@@ -109,7 +110,7 @@ class Index extends React.Component {
             </Select>
         );
         return (
-        <div className="gutter-example">
+        <Page className="gutter-example">
         <BreadcrumbCustom items={[{
           name: "首页",
           icon: "user",
@@ -348,7 +349,7 @@ class Index extends React.Component {
                     </div>
                 </Col>
             </Row>
-        </div>
+        </Page>
         )
     }
 }

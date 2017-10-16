@@ -42,7 +42,7 @@ export default class HeaderCustom extends Component {
   render() {
     const { isMobile, path } = this.props;
     return (
-      <Header style={{ background: '#fff', padding: 0, height: 65 }} className="custom-theme" >
+      <div style={{ background: '#fff', padding: 0, height: 65 }}>
         {
           isMobile ? (
             <Popover content={<SiderCustom path={path} popoverHide={this.popoverHide} />} trigger="click" placement="bottomLeft" visible={this.state.visible} onVisibleChange={this.handleVisibleChange}>
@@ -58,7 +58,7 @@ export default class HeaderCustom extends Component {
       	}
       <Menu
         mode="horizontal"
-        style={{ lineHeight: '64px', float: 'right' }}
+        style={{ lineHeight: '64px', float: 'right',border:0 }}
         onClick={this.menuClick}
       >
 
@@ -85,7 +85,7 @@ export default class HeaderCustom extends Component {
             left: -40px;
         }
       `}</style>
-      </Header>
+      </div>
     )
   }
 
